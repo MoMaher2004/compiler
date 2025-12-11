@@ -1,13 +1,9 @@
 import sys
 sys.setrecursionlimit(10000)
 
-############################################
-########### CODE IS NOT COMPLETE YET #######
-
-
-
 tokens = []
 i = 0
+currentLine = 1
 
 def peek(s=0):
     global tokens, i
@@ -16,8 +12,10 @@ def peek(s=0):
     return tokens[i + s]
 
 def eat(expected, isValue=0):
-    global tokens, i
-    if peek()[isValue] == expected: 
+    global tokens, i, currentLine
+    if expected == 'new line': currentLine += 1
+    if expected == 'comment': currentLine += peek()[1].count('\n')
+    if peek()[isValue] == expected:
         i += 1
     else: 
         raise SyntaxError(f'Expected {expected} not {tokens[i][isValue]} at i = {i}')
@@ -48,11 +46,9 @@ def ID():
 def COMMENT():
     global i
     global tokens
-    # Handle // comment
     if peek()[1] == '//':
         eat('//', 1)
         eat('comment', 0)
-    # Handle /* comment */
     elif peek()[1] == '/*':
         eat('/*', 1)
         eat('comment', 0)
@@ -156,12 +152,11 @@ def ELSE():
             WHITESPACE()
             CODE()
             WHITESPACE()
-            print(i, peek())
             eat('}', 1)
         else:
             IF()
     except SyntaxError:
-        i = saved  # ε case - no else
+        i = saved
 
 def DECLARE_FOLLOWER():
     global i
@@ -200,12 +195,11 @@ def ASSIGNMENT():
     global i
     global tokens
     saved = i
-    # Try with datatype first
     try:
         DATATYPE()
         WHITESPACE()
     except SyntaxError:
-        i = saved  # No datatype - simple assignment
+        i = saved
     
     ID()
     WHITESPACE()
@@ -219,7 +213,6 @@ def ITEM():
     global i
     global tokens
     saved = i
-    # Try each possible item type
     if peek()[1] in ['int', 'char', 'bool', 'float', 'double']:
         try:
             DECLARE()
@@ -245,19 +238,17 @@ def ITEM():
         WHITESPACE()
         return True
     elif peek()[1] == '}':
-        return False  # End of code block
+        return False
     else:
-        # Try assignment without datatype
         try:
             ASSIGNMENT()
             return True
         except SyntaxError:
             i = saved
     
-    return False  # Could not parse any item
+    return False
 
 def CODE():
-    # Parse zero or more items
     while True:
         if not ITEM():
             break
@@ -278,11 +269,9 @@ def P():
     eat('}', 1)
     WHITESPACE()
     
-    # Check for EOF
     if i < len(tokens):
         raise SyntaxError(f'Unexpected tokens at end: {tokens[i:]}')
 
-# Read tokens
 code = open("./tokens.txt", "r")
 tokens_raw = code.read().strip()[1:-1].split(">\n<")
 tokens = []
@@ -306,11 +295,4 @@ try:
     print("Parsing successful! No syntax errors.")
 except SyntaxError as e:
     print(f"Syntax Error: {e}")
-    print(f"Current token index: {i}")
-    if i < len(tokens):
-        print(f"Current token: {tokens[i]}")
-    print(f"Previous tokens: {tokens[max(0, i-3):i]}")
-except Exception as e:
-    print(f"Unexpected error: {e}")
-    import traceback
-    traceback.print_exc()
+    print(f'current line:', currentLine)

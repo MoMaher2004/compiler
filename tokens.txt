@@ -112,7 +112,6 @@
 <operator,=>
 <white space>
 <numerical constant,3.1>
-<numerical constant,.4>
 <special character,;>
 <white space>
 <special character,//>

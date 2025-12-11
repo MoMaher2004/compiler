@@ -8,7 +8,7 @@ int main() {
         x = x-3;
     } else {
         y = 3.1; // Another comment
-        y = 3.1.4; // Another comment
+        y = 3.1; // Another comment
     }
     char f = 'hafgatgae';
     return 0;

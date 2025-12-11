@@ -120,7 +120,7 @@ while i < len(code):
             word.append(code[i])
             i += 1
         tokens.append(f"<comment,{(''.join(word))}>")
-        tokens.append(f"<special character,*/")
+        tokens.append(f"<special character,*/>")
         i += 2
 
     elif code[i] in operators:
