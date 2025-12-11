@@ -1,151 +1,151 @@
-<'keyword', int>
-<'white space', >
-<'identifier', main>
-<'special character', (>
-<'special character', )>
-<'white space', >
-<'special character', {>
-<'new line', \n>
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'keyword', int>
-<'white space', >
-<'identifier', x>
-<'special character', ,>
-<'identifier', y>
-<'special character', ;>
-<'new line', \n>
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'special character', //>
-<'comment',  This is a single-line comment>
-<'new line', \n>
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'keyword', if>
-<'white space', >
-<'special character', (>
-<'identifier', x>
-<'white space', >
-<'operator', ==>
-<'white space', >
-<'numerical constant', 42>
-<'special character', )>
-<'white space', >
-<'special character', {>
-<'new line', \n>
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'special character', /*>
-<'comment',  This is
+<keyword,int>
+<white space>
+<identifier,main>
+<special character,(>
+<special character,)>
+<white space>
+<special character,{>
+<new line>
+<white space>
+<white space>
+<white space>
+<white space>
+<keyword,int>
+<white space>
+<identifier,x>
+<special character,,>
+<identifier,y>
+<special character,;>
+<new line>
+<white space>
+<white space>
+<white space>
+<white space>
+<special character,//>
+<comment, This is a single-line comment>
+<new line>
+<white space>
+<white space>
+<white space>
+<white space>
+<keyword,if>
+<white space>
+<special character,(>
+<identifier,x>
+<white space>
+<operator,==>
+<white space>
+<numerical constant,42>
+<special character,)>
+<white space>
+<special character,{>
+<new line>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<special character,/*>
+<comment, This is
            a block
            comment >
-<'special character', */
-<'new line', \n>
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'identifier', x>
-<'white space', >
-<'operator', =>
-<'white space', >
-<'identifier', x>
-<'operator', ->
-<'numerical constant', 3>
-<'special character', ;>
-<'new line', \n>
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'special character', }>
-<'white space', >
-<'keyword', else>
-<'white space', >
-<'special character', {>
-<'new line', \n>
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'identifier', y>
-<'white space', >
-<'operator', =>
-<'white space', >
-<'numerical constant', 3.1>
-<'special character', ;>
-<'white space', >
-<'special character', //>
-<'comment',  Another comment>
-<'new line', \n>
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'identifier', y>
-<'white space', >
-<'operator', =>
-<'white space', >
-<'numerical constant', 3.1>
-<'numerical constant', .4>
-<'special character', ;>
-<'white space', >
-<'special character', //>
-<'comment',  Another comment>
-<'new line', \n>
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'special character', }>
-<'new line', \n>
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'keyword', char>
-<'white space', >
-<'identifier', f>
-<'white space', >
-<'operator', =>
-<'white space', >
-<'special character', '>
-<'character constant', hafgatgae>
-<'special character', '>
-<'special character', ;>
-<'new line', \n>
-<'white space', >
-<'white space', >
-<'white space', >
-<'white space', >
-<'keyword', return>
-<'white space', >
-<'numerical constant', 0>
-<'special character', ;>
-<'new line', \n>
-<'special character', }>
+<special character,*/>
+<new line>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<identifier,x>
+<white space>
+<operator,=>
+<white space>
+<identifier,x>
+<operator,->
+<numerical constant,3>
+<special character,;>
+<new line>
+<white space>
+<white space>
+<white space>
+<white space>
+<special character,}>
+<white space>
+<keyword,else>
+<white space>
+<special character,{>
+<new line>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<identifier,y>
+<white space>
+<operator,=>
+<white space>
+<numerical constant,3.1>
+<special character,;>
+<white space>
+<special character,//>
+<comment, Another comment>
+<new line>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<white space>
+<identifier,y>
+<white space>
+<operator,=>
+<white space>
+<numerical constant,3.1>
+<numerical constant,.4>
+<special character,;>
+<white space>
+<special character,//>
+<comment, Another comment>
+<new line>
+<white space>
+<white space>
+<white space>
+<white space>
+<special character,}>
+<new line>
+<white space>
+<white space>
+<white space>
+<white space>
+<keyword,char>
+<white space>
+<identifier,f>
+<white space>
+<operator,=>
+<white space>
+<special character,'>
+<character constant,hafgatgae>
+<special character,'>
+<special character,;>
+<new line>
+<white space>
+<white space>
+<white space>
+<white space>
+<keyword,return>
+<white space>
+<numerical constant,0>
+<special character,;>
+<new line>
+<special character,}>

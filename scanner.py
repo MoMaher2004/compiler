@@ -1,4 +1,4 @@
-code = open("./ideone_ibyt63.cpp", "r").read()
+code = open("./modified example.cpp", "r").read()
 
 """
 keyword
@@ -92,64 +92,64 @@ while i < len(code):
             i += 1
 
         if ''.join(word) in keywords:
-            tokens.append(f"<'keyword', {(''.join(word))}>")
+            tokens.append(f"<keyword,{(''.join(word))}>")
         else:
-            tokens.append(f"<'identifier', {(''.join(word))}>")
+            tokens.append(f"<identifier,{(''.join(word))}>")
 
     elif 48 <= ord(code[i]) < 58 or ord(code[i]) == 46:
         while 48 <= ord(code[i]) < 58 or (ord(code[i]) == 46 and pointFlag == False):
             if ord(code[i]) == 46: pointFlag = True
             word.append(code[i])
             i += 1
-        tokens.append(f"<'numerical constant', {(''.join(word))}>")
+        tokens.append(f"<numerical constant,{(''.join(word))}>")
 
     elif code[i] == '/' and code[i + 1] == '/':
-        tokens.append(f"<'special character', //>")
+        tokens.append(f"<special character,//>")
         i += 2
         while code[i] != '\n':
             word.append(code[i])
             i += 1
-        tokens.append(f"<'comment', {(''.join(word))}>")
-        tokens.append(f"<'new line', \\n>")
+        tokens.append(f"<comment,{(''.join(word))}>")
+        tokens.append(f"<new line>")
         i += 1
 
     elif code[i] == '/' and code[i + 1] == '*':
-        tokens.append(f"<'special character', /*>")
+        tokens.append(f"<special character,/*>")
         i += 2
         while f"{code[i]}{code[i + 1]}" != '*/':
             word.append(code[i])
             i += 1
-        tokens.append(f"<'comment', {(''.join(word))}>")
-        tokens.append(f"<'special character', */")
+        tokens.append(f"<comment,{(''.join(word))}>")
+        tokens.append(f"<special character,*/")
         i += 2
 
     elif code[i] in operators:
         if code[i + 1] in operators:
-            tokens.append(f"<'operator', {code[i]}{code[i + 1]}>")
+            tokens.append(f"<operator,{code[i]}{code[i + 1]}>")
             i += 2
             continue
         else:
-            tokens.append(f"<'operator', {code[i]}>")
+            tokens.append(f"<operator,{code[i]}>")
             i += 1
             continue
     elif code[i] in stringBrackets:
         b = code[i]
-        tokens.append(f"<'special character', {code[i]}>")
+        tokens.append(f"<special character,{code[i]}>")
         i += 1
         while code[i] != b:
             word.append(code[i])
             i += 1
-        tokens.append(f"<'character constant', {(''.join(word))}>")
-        tokens.append(f"<'special character', {code[i]}>")
+        tokens.append(f"<character constant,{(''.join(word))}>")
+        tokens.append(f"<special character,{code[i]}>")
         i += 1
     elif code[i] == ' ':
-        tokens.append(f"<'white space', >")
+        tokens.append(f"<white space>")
         i += 1
     elif code[i] == '\n':
-        tokens.append(f"<'new line', \\n>")
+        tokens.append(f"<new line>")
         i += 1
     elif code[i] in specialChars:
-        tokens.append(f"<'special character', {code[i]}>")
+        tokens.append(f"<special character,{code[i]}>")
         i += 1
     else:
         print('SYNTAX ERROR')
